@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            min-height: 100vh;
+            padding: 20px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .container form{
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        form input,textarea,select{
+            width: 100%;
+            padding: 6px;
+            font-size: 1rem;
+        }
+        button{
+            width: 100%;
+            border: none;
+            padding: 10px;
+            font-size: 1.1rem;
+            background-color: darkgreen;
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover{
+            opacity: 0.8;
+        }
+        table{
+            border-collapse: collapse;
+            background-color: #fff;
+            width: 80%;
+        }
+        td, th{
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+          
+        }
+        td img{
+            width: 80px;
+            height: 80px;
+            padding: 5px;
+            border: 3px solid rgb(19, 86, 118);
+            border-radius: 100px;
+        }
+        th{
+            background-color: rgb(19, 86, 118);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" onsubmit="submitHanlder(event)">
+            <label for="">Username</label>
+            <input type="text" name="" id="name" placeholder="Enter your name" required>
+            <label for="">Email Address</label>
+            <input type="email" name="" id="email" placeholder="Enter your email" required>
+            <label for="">Address</label>
+            <textarea name="" id="address" rows="5"></textarea>
+            <label for="">Gender</label>
+            <select name="" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <button type="submit" onclick="createtable()" >submit</button>
+        </form>
+
+
+        <table id="table" align="center" >
+            <tr>
+                
+                <th>Username</th>
+                <th>email</th>
+                <th>Address</th>
+                <th>Gender</th>
+               
+            </tr>
+        </table>
+    </div>
+
+
+    
+
+
+    <script>
+        let name=document.getElementById('name');
+        let email=document.getElementById('email');
+        let address=document.getElementById('address');
+        let gender=document.getElementById('gender');
+        let table = document.getElementById('table');
+
+        var alluser=[];
+
+        function insertdata(){
+            let newuser={
+                username:name.value,
+                useremail:email.value,
+                useraddress:address.value,
+                usergender:gender.value
+            }
+            alluser.push(newuser);
+
+            name.value='',
+            email.value='',
+            address.value='',
+            gender.vaule=''
+        }
+        console.log(alluser);
+        
+
+        function submitHanlder(e){
+            e.preventDefault(); //prevents reload
+
+            let newuser={
+                username:name.value,
+                useremail:email.value,
+                useraddress:address.value,
+                usergender:gender.value
+            }
+
+            console.log(alluser);
+
+            table.innerHTML += `
+                <tr>
+                
+                    <td style='background-color:${newuser.bg_color}; color:${newuser.text_color}'>${newuser.username}</td>
+                    <td style='background-color:${newuser.bg_color}; color:${newuser.text_color}'>${newuser.useremail}</td>
+                    <td style='background-color:${newuser.bg_color}; color:${newuser.text_color}'> ${newuser.usergender}</td>
+                    <td style='background-color:${newuser.bg_color}; color:${newuser.text_color}'> ${newuser.useraddress}</td>
+
+                    <td style='background-color:${newuser.bg_color}; color:${newuser.text_color}'></td>
+                </tr>
+            `
+
+           
+            
+        }
+
+        
+    </script>
+</body>
+</html>

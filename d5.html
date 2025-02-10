@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="card">
+        <input type="text" name="" id="numbers" placeholder="enter the random number" required>
+        <button id="add" onclick="addelemhandler()">Add</button>
+        <button id="display" onclick="displayhandler()">Display</button>
+        <button id="pop" onclick="popelemhandler()">Pop</button>
+        <button id="clear" onclick="clearhandler()">Clear</button>
+
+        <p id="result"></p>
+    </section>
+    <script>
+        let elements=[];
+        let inputtag=document.getElementById('numbers');
+        let addbtn=document.getElementById('add');
+        let result=document.getElementById('result');
+
+        function addelemhandler(){
+            elements.push(Number(inputtag.value));
+            console.log(elements);
+            
+        }
+        
+        function displayhandler(){
+
+            for(let i=0;i<elements.length;i++){
+                result.innerHTML+=`
+            <p>elements = ${elements[i]}<p>
+            `
+            }
+           
+        }
+
+        function popelemhandler(){
+            elements.pop();
+            for(let i=0;i<elements.length;i++){
+                result.innerHTML+=`
+            <p>elements = ${elements[i]}<p>
+            `
+            }
+            console.log(elements);
+            
+        }
+        function clearhandler(){
+             
+            result.innerHTML=" ";
+            // console.log(elements);
+            
+        }
+
+        
+
+    </script>
+</body>
+</html>

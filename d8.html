@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits=['Apple', 'Banana', 'Mango', 'Orange', 'Pineapple'];
+
+        let input=prompt('enter the fruit name:');
+
+        for(let i=0;i<fruits.length;i++){
+            if(fruits[i]==input){
+                document.write(`<p> ${fruits} </p>`)
+                document.write(`<p><span style='color:red'>${fruits[i]}</span></p>`);
+            }
+        }
+
+    </script>
+</body>
+</html>

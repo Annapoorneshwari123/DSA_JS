@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>string methods</h1>
+    </center>
+ <p id="result"></p>
+    <script>
+        let sentence="javascript is awesome";
+        let splittedsentence=sentence.split(' ').reverse().join(' ');
+        console.log(splittedsentence);
+        document.write(`<h1>the input is="${sentence}"</h1><br/>
+        <h1>the output is="${splittedsentence}"</h1>
+        `)
+    </script>
+
+    <script>
+         let csvData = "name,age,city";
+         let array= csvData.split(",");
+         console.log(array);
+         console.log(Array.isArray(array));
+         
+         document.write(`<h1>the input is="${csvData}"</h1><br/>
+        <h1>the output is=[${array}]</h1>
+        `)
+    </script>
+
+<script>
+    let message = "You are such a bad coder!";
+    let badWord = "bad";
+   var splitmsg=message.replace(badWord,'***');
+   console.log(splitmsg);
+   document.write(`<h1>the input is=${message}</h1>`)
+   document.write(`<h1>the output is=${splitmsg}</h1><hr>`)
+</script> 
+
+<script>
+     let title = "Learn JavaScript in 30 Days";
+     
+   document.write(`<h1>the input is=${title}</h1>`)
+     document.write(`<h1>the output is="${title.split(' ').join('-').toLowerCase()}"</h1><hr>`)
+</script>
+
+<script>
+    var text = "Win a free iPhone now!";
+    var spamWords = ["win", "free", "iPhone"];
+    function isspam(text,spamWords){
+        text=text.toLowerCase();
+        return spamWords.some(word=>text.includes(word.toLowerCase()));
+    }
+    document.write(`<h1>the output is = ${(isspam(text,spamWords))}</h1><hr>`);
+    
+    
+</script>
+
+<script>
+    let email = "user@example.com";
+
+    function isvalid(email){
+        let emailexp= /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return emailexp.test(email);
+    }
+    console.log(isvalid(email));
+        // console.log(res);
+    document.write(`<h1>the output is = ${isvalid(email)}</h1><hr>`);
+    
+</script>
+</body>
+</html>

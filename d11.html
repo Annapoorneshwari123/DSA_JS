@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center>
+    <h1>Array methods</h1>
+   </center>
+
+    <script>
+         var numbers = [1, 2, 3, 4, 5];
+         var result=[];
+
+         for(let i=0;i<numbers.length;i++){
+            // console.log(numbers[i]);
+            result.push (numbers[i] * numbers[i]) ;
+         }
+        document.write(`<h1>the output is =[${result}] </h1><hr>`);
+    </script>
+
+<script>
+    let prices = [49.99, 19.99, 5.5];
+   let price=prices.map((value)=>'$'+value);
+   console.log(price);
+   document.write(`<h1>the output of the prices is=[${price}]</h1>`)
+   
+    
+</script>
+
+<script>
+    var numList = [10, 15, 20, 25, 30];
+    var evenNumbers = numList.filter(function(item){
+        if(item%2==0){
+            return item;
+        }
+    })
+    document.write(`<h1>the output is=${evenNumbers}</h1>`)
+</script>
+
+<script>
+    let users = [
+{ name: "Alice", isActive: true },
+{ name: "Bob", isActive: false },
+{ name: "Charlie", isActive: true }
+];
+
+var user=users.every((item)=>item.isActive==true)
+console.log(user);
+document.write(`<h1>the output is=${user}</h1>`)
+
+</script>
+
+<script>
+    let numArr = [1, 2, 3, 4, 5];
+    var sum=0;
+   function sumup(){
+
+    for(let i=0;i<numArr.length;i++){
+        sum = sum+numArr[i];
+        console.log(sum); 
+    }
+   }
+   sumup(numArr);
+   document.write(`<h1>the output is=${sum}</h1>`)
+   
+</script>
+
+<script>
+    var cart = [
+{ item: "Shoes", price: 100, quantity: 2 },
+{ item: "Bag", price: 50, quantity: 1 }
+];
+function cartvalue(){
+    if(cart[0].quantity==2){
+        var price =cart[0].price*2;
+        var price1=cart[1].price;
+        var total=price +price1;
+        document.write(`<h1>the output of the total cart value=${total}</h1>`)
+        
+    }
+}
+cartvalue();
+</script>
+
+<script>
+    let values = [3, 5, -2, 6, -7];
+    let firstneg=values.find((Element)=>Element<-1)
+    document.write(`<h1>the output of first negative number: ${firstneg}</h1>`)
+    
+</script>
+
+<script>
+    let userList = [
+{ id: 101, name: "Alice" },
+{ id: 102, name: "Bob" },
+{ id: 103, name: "Charlie" }
+];
+let searchId = 102;
+
+let list= userList.find((item)=>item.id==searchId)
+console.log(list);
+
+</script>
+
+
+
+
+</script>
+</body>
+</html>

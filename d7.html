@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="fruitParagraph">Apple, Banana, Mango, Orange, Pineapple</p>
+
+    <script>
+    
+
+   function highlightFruit() {
+            let input = prompt("Enter a fruit name").trim();
+            let paragraph = document.getElementById("fruitParagraph");
+            let words = paragraph.innerText.split(", ");
+            
+            for (let i = 0; i < words.length; i++) {
+                if (words[i].toLowerCase() === input.toLowerCase()) {
+                    words[i] = `<span class='highlight'>${words[i]}</span>`;
+                }
+            }
+            
+            paragraph.innerHTML = words.join(", ");
+        }
+        highlightFruit()
+    </script>
+
+    
+   
+</body>
+</html>

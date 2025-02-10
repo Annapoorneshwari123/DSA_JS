@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array=[
+  [2, 4, [6, 8, 2]],   //addition        
+  [3, 6, 9, [18, 162, 3]],   //subtraction   
+  [10, 20, 30, 40, [100, 2, 4]], //division
+  [7, [7, 7, 1]],              //multiplication
+]
+let arrayresult=[];//store all the result in this array of the every array
+
+
+for(let i=0;i<array.length;i++){
+    console.log(array[i]);
+   
+
+    // for(let j=0;j<array[i].length;j++){
+    //     // console.log(array[i][j]);
+        
+
+        let operationValues=array[i][array[i].length-1];
+        var operationResult;
+    
+
+switch (i) {
+    case 0: // Addition
+      operationResult = operationValues[0] + operationValues[1] + operationValues[2];
+      break;
+    case 1: // Subtraction
+      operationResult = operationValues[0] - operationValues[1] - operationValues[2];
+      break;
+    case 2: // Division
+      operationResult = operationValues[0] / operationValues[1] / operationValues[2];
+      break;
+    case 3: // Multiplication
+      operationResult = operationValues[0] * operationValues[1] * operationValues[2];
+      break;
+  }
+
+  arrayresult.push(operationResult);
+}
+console.log(arrayresult);
+
+       
+       
+    
+  
+
+//    console.log(total1);
+//    addedarray.push(total1);
+   
+
+
+// console.log(addedarray);
+
+
+    </script>
+</body>
+</html>
