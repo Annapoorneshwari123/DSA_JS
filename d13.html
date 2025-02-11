@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "aabbccdeeff";
+       
+       function findchar(str){
+        var countstr={};
+        for(let char of str){
+            countstr[char]=(countstr[char]||0)+1;  
+        }
+        for(let char of str ){
+            if(countstr[char]===1){
+                return char;
+            }
+        }
+        return -1;
+       }
+       findchar(str)
+       console.log(str);
+       
+    </script>
+
+    <script>
+        let numbers = [1, 2, 4, 5, 6];
+        let numlength=numbers.length+1;
+        console.log(numlength);
+        let accsum=numlength*(numlength+1)/2;
+        // console.log(accsum);
+        let expsum=numbers.reduce((acc,cur)=>acc+cur,0);
+        var missingval=accsum-expsum;
+        console.log(missingval);
+    </script>
+
+    <script>
+        let sentence = "JavaScript is awesome";
+        // let sentence="javascript is awesome";
+        let splittedsentence=sentence.split(' ').reverse().join(' ');
+        console.log(splittedsentence);
+    </script>
+
+    <script>
+        let arr1 = [1, 3, 5];
+        let arr2 = [2, 4, 6];
+        let arrays=arr1.concat(arr2).sort();
+        console.log(arrays);
+        
+    </script>
+
+    <script>
+        let s = "babad";
+        function ispalindrome(s){
+           let string=s.split('').reverse().join(' ');
+           return s==string;
+           
+        }
+        console.log(ispalindrome(s));
+        
+    </script>
+
+    <script>
+        let nums = [3, 4, -1, 1];
+        // nums.indexOf(-1);
+        // delete nums[2];
+        nums.splice(2,1);
+        console.log(nums);
+        let numlength1=nums.length+1;
+        console.log(numlength1);
+        let accsum1=numlength1*(numlength1+1)/2;
+        // console.log(accsum);
+        let expsum1=nums.reduce((acc,cur)=>acc+cur,0);
+        var missingval=accsum1-expsum1;
+        nums.push(missingval);
+        console.log(missingval);
+        nums.sort();
+        console.log(nums);//[1, 2, 3, 4]
+        
+
+        
+        
+    </script>
+</body>
+</html>

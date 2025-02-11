@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let evenNumbers = [2, 4, 6, 8, 10];
+        let iseven=evenNumbers.every((num)=>num%2==0)
+        console.log(iseven);
+        
+        
+    </script>
+    
+
+    <script>
+        let userData = [
+  { name: "Alice", isVerified: true },
+  { name: "Bob", isVerified: false },
+  { name: "Charlie", isVerified: true }
+];
+
+let user=userData.every((item)=>item.isVerified==false)
+console.log(user);
+
+    </script>
+
+<script>
+    let numList2 = [5, 10, -3, 8];
+let number=numList2.some((list)=>list>-1)
+console.log(number);
+
+</script>
+
+<script>
+    let onlineUsers = [
+  { name: "Alice", online: false },
+  { name: "Bob", online: true },
+  { name: "Charlie", online: false }
+];
+
+let isonline=onlineUsers.some((item)=>item.online==true)
+console.log(isonline);
+
+</script>
+
+    <script>
+        let names = ["John", "Alice", "Bob"];
+        let sortarray=names.sort();
+        console.log(sortarray);
+        document.write(`<h1>the output is: ${sortarray}</h1>`)
+        
+    </script>
+    
+    
+    <script>
+        let products = [
+    { name: "Laptop", price: 1500 },
+    { name: "Phone", price: 800 },
+    { name: "Tablet", price: 1200 }
+    ];
+    
+    let product=products.sort((value1,value2)=>value1.price-value2.price);
+    console.log(product);
+    
+</script>
+   
+</body>
+</html>
